@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Леонардо да Вінчі - Контакти</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Біографія</a></li>
+                <li><a href="contact.html" class="active">Контакти</a></li>
+            </ul>
+        </nav>
+        <h1>Контакти</h1>
+        <p>Зв'яжіться з нами для отримання додаткової інформації</p>
+    </header>
+
+    <main>
+    <section class="contact-form">
+        <div class="container">
+            <div class="contact">
+                <h2>Форма реєстрації</h2>
+                <form id="registerForm">
+                    <div class="form-group">
+                        <label for="username">Ім'я користувача:</label>
+                        <input type="text" id="username" name="username" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="regEmail">Електронна пошта:</label>
+                        <input type="email" id="regEmail" name="regEmail" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Номер телефону:</label>
+                        <input type="tel" id="phone" name="phone" placeholder="+380XXXXXXXXX" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="birthdate">Дата народження:</label>
+                        <input type="date" id="birthdate" name="birthdate" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Стать:</label>
+                        <div class="radio-group">
+                            <label><input type="radio" name="gender" value="male" required> Чоловіча</label>
+                            <label><input type="radio" name="gender" value="female"> Жіноча</label>
+                            <label><input type="radio" name="gender" value="other"> Інше</label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Пароль:</label>
+                        <input type="password" id="password" name="password" minlength="8" required>
+                    </div>
+                    <button type="submit" class="btn">Зареєструватися</button>
+                </form>
+            </div>
+            
+            <div class="contact">
+                <h2>Форма зворотного зв'язку</h2>
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Ім'я:</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Електронна пошта:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group"> 
+                        <label for="subject">Тема повідомлення:</label> 
+                        <select id="subject" name="subject" required> 
+                            <option value="" disabled selected>Оберіть тему</option> 
+                            <option value="general">Загальне питання</option> 
+                            <option value="collaboration">Співпраця</option> 
+                            <option value="other">Інше</option> 
+                        </select> 
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Повідомлення:</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn">Надіслати</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact-info">
+        <div class="container">
+            <h2>Контактна інформація</h2>
+            <div class="contact-grid">
+                <div class="contact-item">
+                    <h3>Музей Леонардо да Вінчі</h3>
+                    <p>Адреса: Вінчі, Італія</p>
+                    <p>Телефон: +39 055 202 9901</p>
+                    <p>Email: info@museoleonardiano.it</p>
+                </div>
+                <div class="contact-item">
+                    <h3>Галерея Уффіці</h3>
+                    <p>Адреса: Флоренція, Італія</p>
+                    <p>Телефон: +39 055 294883</p>
+                    <p>Email: info@uffizi.it</p>
+                </div>
+                <div class="contact-item">
+                    <h3>Лувр</h3>
+                    <p>Адреса: Париж, Франція</p>
+                    <p>Телефон: +33 1 40 20 53 17</p>
+                    <p>Email: info@louvre.fr</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Сайт про Леонардо да Вінчі</p>
+        </div>
+    </footer>
+
+</body>
+</html>
