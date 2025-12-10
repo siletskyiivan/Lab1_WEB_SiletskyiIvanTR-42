@@ -4,6 +4,11 @@
     box-sizing: border-box;
 }
 
+img { /*/////*/                  
+    max-width: 100%;    
+    height: auto;       
+}
+
 body { 
     font-family: 'Times New Roman', serif;
 	font-size: 18px;
@@ -16,6 +21,7 @@ body {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
+    width: 100%;
 }
 
 /* Шапка */
@@ -99,14 +105,15 @@ h2::after {
     box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
 }
 
-.intro-content {
+.intro-content { /*Використання Flexbox*/
     display: flex;
     align-items: center;
     gap: 3rem;
+    flex-wrap: wrap; 
 }
 
 .intro-text {
-    flex: 1;
+    flex: 1 1 300px; /*/////*/
 }
 
 .intro-text h2 {
@@ -124,7 +131,7 @@ h2::after {
 }
 
 .intro-image {
-    flex: 1;
+    flex: 1 1 300px; /*////*/
     text-align: center;
 }
 
@@ -204,32 +211,35 @@ h2::after {
     position: relative;
     width: 100%;
     max-width: 1000px;
-    height: 450px; 
+    height: 600px; 
     margin: 1.5rem auto;
 }
 
-.photo img {
+.photo img { 
     position: absolute; 
-    width: 400px;
-    height: 450px;
-    object-fit: cover;
+    width: 40%; /*Було 400рх*/
+    height: auto;
     border-radius: 10px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+    transition: 0.3s;
 }
 
 .photo img:nth-child(1) {
     top: 0;
-   left: 150px;
+    left: 15%; /*Було 150px*/
+    z-index: 1;
 }
 
 .photo img:nth-child(2) {
-    top: 0;
-    left: 350px; 
+    top: 20px; /*Трохи змістив вниз для краси*/
+    left: 30%; /*Було 350px*/
+    z-index: 2;
 }
 
 .photo img:nth-child(3) {
-    top: 0;
-    left: 550px; 
+    top: 40px;
+    left: 45%; /*Було 550px*/
+    z-index: 3;
 }
 
 /* Досягнення */
@@ -238,8 +248,8 @@ h2::after {
     padding: 3rem 0;
 }
 
-.achievement-grid {
-    display: grid;
+.achievement-grid { /*Використання Grid*/
+    display: grid; 
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
 }
@@ -433,8 +443,11 @@ footer {
         margin: 0.5rem 0;
     }
 }
-
 @media (max-width: 900px) {
+    header h1 {
+        font-size: 2rem;
+    }
+
     .contact-form .container {
         flex-direction: column;
     }
@@ -448,5 +461,61 @@ footer {
     .radio-group {
         flex-direction: column;
         gap: 0.5rem;
+    }
+}
+
+/* Media Queries */
+/* Для планшетів*/
+@media (max-width: 768px) {
+    .timeline::before {
+        left: 20px;
+    }
+
+    .timeline-item {
+        flex-direction: column !important;
+        padding-left: 50px;
+    }
+
+    .timeline-year {
+        align-self: flex-start;
+        margin-bottom: 10px;
+        width: 100px; 
+        height: 44.3px; 
+        flex: none; 
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .timeline-content {
+        width: 100%;
+        margin: 0;
+    }
+
+    .contact-form .container {
+        flex-direction: column;
+    }
+}
+
+/* Для мобільних телефонів*/
+@media (max-width: 600px) {
+    .photo {
+        height: auto; 
+        display: flex;
+        flex-direction: column; 
+        align-items: center;
+        gap: 20px;
+    }
+
+    .photo img {
+        position: static; 
+        width: 90%; 
+        left: auto !important;
+        top: auto !important;
+        }
+
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
     }
 }
